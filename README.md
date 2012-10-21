@@ -1,4 +1,4 @@
-dotfiles
+Dotfiles and defaults
 ========
 
-my dotfiles
+A collection of dotfiles, inspired by many others here on Github
