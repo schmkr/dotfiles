@@ -9,6 +9,7 @@ Installation
 1. `git clone git://github.com/schmkr/dotfiles.git`
 2. `echo "source $HOME/.dotfiles/bash/.bash_profile;" > $HOME/.bash_profile`
 3. `ln -s ~/.dotfiles/git/.gitconfig ~/.gitconfig`
+4. bla
 
 Inspiration
 -----------
