@@ -25,8 +25,10 @@ shopt -s nocaseglob
 shopt -s histappend
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
+# *AWESOME!!!!*
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
 
-source $HOME/Dropbox/.Library/Dotfiles/.bash_aliases;
-source $HOME/Dropbox/.Library/Dotfiles/.bash_functions;
-source $HOME/Dropbox/.Library/Dotfiles/.bash_prompt;
+source $HOME/.dotfiles/.bash_aliases;
+source $HOME/.dotfiles/.bash_functions;
+source $HOME/.dotfiles/.bash_functions_private;
+source $HOME/.dotfiles/.bash_prompt;
