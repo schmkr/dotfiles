@@ -60,26 +60,3 @@ end tell
 EOF
 }
 
-
-## update all NOS SVN repositories
-function nosUp()
-{
-	echo 'Updating www.nos.nl';
-	svn up $HOME/Sites/www.nos.nl;
-
-	echo 'Updating content.nos.nl';
-	svn up $HOME/Sites/content.nos.nl;
-
-	echo 'Updating s.nos.nl';
-	svn up $HOME/Sites/s.nos.nl;
-
-	echo 'Updating www.jeugdjournaal.nl';
-	svn up $HOME/Sites/www.jeugdjournaal.nl;
-
-	echo 'Updating www.nieuwsuur.nl';
-	svn up $HOME/Sites/www.nieuwsuur.nl;
-
-	echo 'Updating app.nos.nl';
-	svn up $HOME/Sites/app.nos.nl;
-
-}
