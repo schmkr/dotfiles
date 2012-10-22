@@ -1,6 +1,5 @@
-[user]
-	name = Alwin Schoemaker
-	email = schoemaker@gmail.com
+#[user]
+# user info is in $HOME/.config/git/config
 
 [alias]
 	# View the SHA, description, and history graph of the latest 20 commits
