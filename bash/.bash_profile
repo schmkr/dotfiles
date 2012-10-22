@@ -28,7 +28,7 @@ shopt -s histappend
 # *AWESOME!!!!*
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
 
-source $HOME/.dotfiles/.bash_aliases;
-source $HOME/.dotfiles/.bash_functions;
-source $HOME/.dotfiles/.bash_functions_private;
-source $HOME/.dotfiles/.bash_prompt;
+source $HOME/.dotfiles/bash/.bash_aliases;
+source $HOME/.dotfiles/bash/.bash_functions;
+source $HOME/.dotfiles/bash/.bash_functions_private;
+source $HOME/.dotfiles/bash/.bash_prompt;
