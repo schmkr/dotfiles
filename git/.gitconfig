@@ -1,5 +1,7 @@
 #[user]
-# user info is in $HOME/.config/git/config
+#this file should hold the user info
+[include]
+		path = ~/.gituser
 
 [alias]
 	# View the SHA, description, and history graph of the latest 20 commits
