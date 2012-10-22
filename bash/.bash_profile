@@ -30,5 +30,11 @@ shopt -s histappend
 
 source $HOME/.dotfiles/bash/.bash_aliases;
 source $HOME/.dotfiles/bash/.bash_functions;
-source $HOME/.dotfiles/bash/.bash_functions_private;
 source $HOME/.dotfiles/bash/.bash_prompt;
+
+# Load extra files from ~/.config/bash/ if they exist
+# These are kept outside of this repo for privacy issues
+for file in ~/.config/bash/.{exports,aliases,functions}; do
+	[ -r "$file" ] && source "$file"
+done
+unset file
