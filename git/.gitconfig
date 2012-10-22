@@ -1,5 +1,6 @@
 # user is set via ~/.config/bash/.exports
 # there we export GIT_AUTHOR_NAME and GIT_AUTHOR_EMAIL
+# and GIT_COMMITTER_NAME and GIT_COMMITTER_EMAIL
 
 [alias]
 	# View the SHA, description, and history graph of the latest 20 commits

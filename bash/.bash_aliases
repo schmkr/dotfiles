@@ -1,10 +1,5 @@
 alias mysql="/usr/local/mysql/bin/mysql"
 alias ping="ping -c 10"
-alias sites="cd ~/Sites/"
-alias l="~/Dropbox/.Library/logger.sh"
-alias wu="/usr/bin/php -f ~/Dropbox/Scripts/wunderlist.php"
-alias subl="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
-alias restartApache="sudo apachectl restart"
 
 # pretty log for github (http://dropshado.ws/post/27506212928/pretty-git-log)
 alias glog="git log --format='%Cgreen%h%Creset %C(cyan)%an%Creset - %s' --graph"
