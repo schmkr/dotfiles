@@ -1,0 +1,27 @@
+#https://github.com/paulirish/dotfiles/blob/master/.ackrc
+--ignore-dir=log
+--ignore-dir=tmp
+--sort-files
+-a
+
+# Always color, even piping
+# https://gist.github.com/735993
+--color
+
+# https://gist.github.com/1636110
+# Add filters for file types
+# Javascript
+--type-set
+js=.js
+
+# CSS
+--type-set
+css=.css
+
+# Sass, both syntaxes
+--type-set
+sass=.scss,.sass
+
+# Php and phtml view scrips
+--type-set
+php=.php,.phtml
