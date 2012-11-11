@@ -1,11 +1,11 @@
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH:$HOME/bin:$HOME/Dropbox/.Library/bin
+export PATH=$HOME/bin:$HOME/Dropbox/.Library/bin:/opt/local/bin:/opt/local/sbin:$PATH
 
 # Larger bash history (allow 32³ entries; default is 500)
 export HISTSIZE=32768
 export HISTFILESIZE=$HISTSIZE
 export HISTCONTROL=ignoreboth
 # Make some commands not show up in history
-export HISTIGNORE="ls:ls *:cd *:cd -:pwd:exit:date:* --help:ssh:clear:git status:restartApache"
+export HISTIGNORE="exit:date:clear"
 
 export EDITOR="nano"
 export EVENT_NOKQUEUE=1
