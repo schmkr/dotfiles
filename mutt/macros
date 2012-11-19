@@ -1,0 +1,8 @@
+# -*- muttrc -*-
+# mutt macros file
+
+# reload configuration
+macro index,browser .r "<enter-command>source ~/.muttrc<enter>"
+
+# use CTRL+B to open a link
+macro pager \cb <pipe-entry>'urlview'<enter> 'Follow links with urlview'
