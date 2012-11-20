@@ -6,3 +6,15 @@ macro index,browser .r "<enter-command>source ~/.muttrc<enter>"
 
 # use CTRL+B to open a link
 macro pager \cb <pipe-entry>'urlview'<enter> 'Follow links with urlview'
+
+# Mark all as read
+macro index ,rr "T~U<enter>;WN"
+
+# Show only new messages
+macro index ,n "l~U<enter>"
+
+# Gmail style "go to inbox"
+macro index gi "<change-folder>+INBOX<enter>" "Go to inbox"
+
+# View the path of the mail.
+macro pager \eh <pipe-message>mailhops<enter>
