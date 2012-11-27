@@ -1,8 +1,11 @@
-export PATH=$HOME/bin:$HOME/Dropbox/.Library/bin:/opt/local/bin:/opt/local/sbin:$PATH
+export PATH=$HOME/bin:/opt/local/bin:/opt/local/sbin:$PATH
 
-# Larger bash history (allow 32³ entries; default is 500)
-export HISTSIZE=32768
+# Larger bash history
+export HISTSIZE=1000000
 export HISTFILESIZE=$HISTSIZE
+
+#ignore duplicates and commands that start with a space.
+#NOTE TO SELF, remember to use the space start more often
 export HISTCONTROL=ignoreboth
 # Make some commands not show up in history
 export HISTIGNORE="exit:date:clear"
@@ -25,7 +28,6 @@ shopt -s nocaseglob
 shopt -s histappend
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
-# *AWESOME!!!!*
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
 
 source $HOME/.dotfiles/bash/.bash_aliases;
