@@ -24,8 +24,8 @@ set mat=4
 " Enable syntax highlighting
 syntax enable
 
-colorscheme solarized
-set background=dark
+" Set our colorscheme
+colorscheme Tomorrow-Night
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
@@ -33,7 +33,7 @@ set encoding=utf8
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
-" Turn backup off, since most stuff is in SVN, git et.c anyway...
+" Turn backup off, since most stuff is in version control anyway...
 set nobackup
 set nowb
 set noswapfile
@@ -47,6 +47,7 @@ func! DeleteTrailingWS()
   %s/\s\+$//ge
   exe "normal `z"
 endfunc
+
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
 autocmd BufWrite *.js :call DeleteTrailingWS()
