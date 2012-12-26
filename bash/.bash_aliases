@@ -1,6 +1,8 @@
 alias mysql="/usr/local/mysql/bin/mysql"
 alias ping="ping -c 10"
 
+alias cls="clear"
+
 # pretty log for github (http://dropshado.ws/post/27506212928/pretty-git-log)
 alias glog="git log --format='%Cgreen%h%Creset %C(cyan)%an%Creset - %s' --graph"
 
