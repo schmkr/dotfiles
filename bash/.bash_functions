@@ -21,7 +21,17 @@ function json() {
 	fi
 }
 
-#
+#create a directory and go right into it
 function mcd() {
   mkdir -p "$1" && cd "$1";
+}
+
+# search for occurrences of text in files
+# (but exclude .svn directory)
+ft() {
+	if [ -z "$2" ]; then
+		find . -type f -wholename "*.*" -not -iwholename "*.svn*" -print0 | xargs -0 fgrep "$1"
+	else # apply the filter
+		find . -type f -wholename "$2" -not -iwholename "*.svn*" -print0 | xargs -0 fgrep "$1"
+	fi
 }
