@@ -19,7 +19,8 @@ alias db='cd $HOME/Dropbox/'
 
 # Show which commands you use the most
 # http://alias.sh/show-which-commands-you-use-most
-alias freq='cut -f1 -d" " ~/.bash_history | sort | uniq -c | sort -nr | head -n 30'
+#alias freq='cut -f1 -d" " ~/.bash_history | sort | uniq -c | sort -nr | head -n 30'
+alias freq='history|awk '{if($2 == "sudo"){print $3}else{print $2}}'|awk 'BEGIN{FS ="|"}{print $1}'|sort|uniq -c|sort -rn|head -30'
 
 # Get my public ipaddress
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
