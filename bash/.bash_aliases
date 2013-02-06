@@ -42,6 +42,9 @@ alias sudo='sudo '
 # URL-encode strings
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
 
+# list total disk usage for current folder contents. (https://twitter.com/climagic/status/291230535995494400)
+alias use="/usr/bin/env ls -1A | tr '\n' '\0' | xargs -0 du -sk | sort -n"
+
 # --------------------------------
 # Directory listing aliasses
 # --------------------------------
