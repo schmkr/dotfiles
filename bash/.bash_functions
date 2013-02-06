@@ -30,8 +30,8 @@ function mcd() {
 # (but exclude .svn directory)
 ft() {
 	if [ -z "$2" ]; then
-		find . -type f -wholename "*.*" -not -iwholename "*.svn*" -print0 | xargs -0 fgrep "$1"
+		find . -type f -wholename "*.*" -not -iwholename "*.svn*" -print0 | xargs -0 fgrep -i "$1"
 	else # apply the filter
-		find . -type f -wholename "$2" -not -iwholename "*.svn*" -print0 | xargs -0 fgrep "$1"
+		find . -type f -wholename "$2" -not -iwholename "*.svn*" -print0 | xargs -0 fgrep i "$1"
 	fi
 }
