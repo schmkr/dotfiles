@@ -35,3 +35,16 @@ ft() {
 		find . -type f -wholename "$2" -not -iwholename "*.svn*" -print0 | xargs -0 fgrep i "$1"
 	fi
 }
+
+# Truncate oversized lines on input. Mostly for display use. Example: grep foo log | fitterm
+# source: https://twitter.com/climagic/status/299554737756438528
+fitterm() {
+	cut -c 1-$( tput cols );
+}
+
+# Datestamp
+# https://twitter.com/climagic/status/301023842300731394
+datestamp() {
+	date +%Y%m%d;
+}
+
