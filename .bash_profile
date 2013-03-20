@@ -1,15 +1,6 @@
 # always add the bin dir in $HOME, for overriding some binaries with newer versions
 export PATH=$HOME/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:$PATH
 
-# GIT PS1 configuration (http://ithaca.arpinum.org/2013/01/02/git-prompt.html)
-GIT_PS1_SHOWDIRTYSTATE=1
-GIT_PS1_SHOWSTASHSTATE=1
-GIT_PS1_SHOWUNTRACKEDFILES=1
-# Explicitly unset color (default anyhow). Use 1 to set it.
-GIT_PS1_SHOWCOLORHINTS=1
-GIT_PS1_DESCRIBE_STYLE="branch"
-GIT_PS1_SHOWUPSTREAM="auto git"
-
 # Larger bash history
 export HISTSIZE=1000000
 export HISTFILESIZE=$HISTSIZE
@@ -43,10 +34,11 @@ shopt -s histappend
 source $HOME/.dotfiles/bash/aliases.sh;
 source $HOME/.dotfiles/bash/functions.sh;
 source $HOME/.dotfiles/bash/prompt.sh;
+source $HOME/.dotfiles/git/bash.sh;
 
 # Load extra files from ~/.config/bash/ if they exist
 # These are kept outside of this repo for privacy issues
-for file in ~/.config/bash/{exports,aliasses,functions}.sh; do
+for file in ~/.config/bash/{exports,aliases,functions}.sh; do
 	[ -r "$file" ] && source "$file"
 done
 unset file
