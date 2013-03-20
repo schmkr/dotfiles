@@ -11,7 +11,7 @@ export HISTCONTROL=ignoreboth
 # Make some commands not show up in history
 export HISTIGNORE="exit:date:clear"
 
-export EDITOR="nano"
+export EDITOR="vim"
 export EVENT_NOKQUEUE=1
 
 # Don’t clear the screen after quitting a manual page
