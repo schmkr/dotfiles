@@ -1,0 +1,6 @@
+[submodule "mutt/colorschemes/solarized"]
+	path = mutt/colorschemes/solarized
+	url = git@github.com:altercation/mutt-colors-solarized.git
+[submodule "vim/bundle/gitgutter"]
+	path = vim/bundle/gitgutter
+	url = git://github.com/airblade/vim-gitgutter.git
