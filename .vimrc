@@ -25,7 +25,7 @@ set mat=4
 syntax enable
 
 " Set our colorscheme
-let g:solarized_termcolors=256
+" let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
 
