@@ -48,6 +48,14 @@ function print_before_the_prompt () {
 	printf "\033[3;37m%s\033[0m:%s" "$NOW"
 }
 
+function parse_git_dirty() {
+	[[ $(git status 2> /dev/null | tail -n1 | cut -b 1-17) != "nothing to commit" ]] && echo "*"
+}
+
+function parse_git_branch() {
+	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
+}
+
 PROMPT_COMMAND=print_before_the_prompt
-export PS1=" \[${BOLD}${MAGENTA}\]\u \[${WHITE}\]@ \[$ORANGE\]\h \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on\")\[$PURPLE\]\$(__git_ps1)\[$WHITE\]\n\$ \[$RESET\]"
+export PS1=" \[${BOLD}${MAGENTA}\]\u \[${WHITE}\]@ \[$ORANGE\]\h \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
 export PS2="\[$ORANGE\]→ \[$RESET\]"
