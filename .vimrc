@@ -25,6 +25,8 @@ set mat=4
 syntax enable
 
 " Set our colorscheme
+let g:solarized_termcolors=256
+set background=dark
 colorscheme solarized
 
 " Set utf8 as standard encoding and en_US as the standard language
