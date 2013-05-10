@@ -33,7 +33,6 @@ shopt -s histappend
 
 source $HOME/.dotfiles/bash/aliases.sh;
 source $HOME/.dotfiles/bash/functions.sh;
-source $HOME/.dotfiles/bash/git-prompt.sh;
 source $HOME/.dotfiles/bash/prompt.sh;
 source $HOME/.dotfiles/git/bash.sh;
 
