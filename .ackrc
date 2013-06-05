@@ -2,7 +2,12 @@
 --ignore-dir=log
 --ignore-dir=tmp
 --sort-files
+
+#search all files:
 -a
+
+#use less as a pager
+--pager=less -r
 
 # Always color, even piping
 # https://gist.github.com/735993
