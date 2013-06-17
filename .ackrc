@@ -24,4 +24,4 @@ sass=.scss,.sass
 
 # Php and phtml view scrips
 --type-set
-php=.php,.phtml
+php=.php,.phtml,.ctp,.tpl
