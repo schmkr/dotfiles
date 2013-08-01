@@ -1,13 +1,16 @@
 #https://github.com/paulirish/dotfiles/blob/master/.ackrc
 --ignore-dir=log
 --ignore-dir=tmp
+--ignore-dir=.git
+--ignore-dir=.svn
+
 --sort-files
 
 #search all files:
 -a
 
 #use less as a pager
---pager=less -r
+#--pager=less -r
 
 # Always color, even piping
 # https://gist.github.com/735993
