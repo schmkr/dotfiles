@@ -56,6 +56,9 @@
 
 	quotepath = false
 
+	# Do not use less as a pager, we'll pipe it to less if it's neccessary
+	pager =
+
 [color]
 	# Use colors in Git commands that are capable of colored output when outputting to the terminal
 	ui = auto
