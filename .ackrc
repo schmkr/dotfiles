@@ -7,7 +7,7 @@
 --sort-files
 
 #search all files:
--a
+#-a
 
 #use less as a pager
 #--pager=less -r
