@@ -21,6 +21,9 @@ set showmatch
 " How many tenths of a second to blink when matching brackets
 set mat=4
 
+" Enable line numbers
+set number
+
 " Enable syntax highlighting
 syntax enable
 
@@ -33,7 +36,7 @@ colorscheme solarized
 set encoding=utf8
 
 " Use Unix as the standard file type
-set ffs=unix,dos,mac
+set ffs=unix
 
 " Turn backup off, since most stuff is in version control anyway...
 set nobackup
