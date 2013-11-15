@@ -33,4 +33,4 @@ sass=.scss,.sass
 
 # Php and phtml view scrips
 --type-set
-php=.php,.phtml,.ctp,.tpl
+php=.php,.phtml,.ctp,.tpl,.twig
