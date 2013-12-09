@@ -1,5 +1,5 @@
 # always add the bin dir in ~, for overriding some binaries with newer versions
-export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:$PATH
+export PATH=~/bin:/usr/local/bin:/usr/local/sbin:~/node_modules/.bin:$PATH
 
 # Larger bash history
 export HISTSIZE=1000000
@@ -31,6 +31,10 @@ shopt -s histappend
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "~/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
 
 source ~/dotfiles/bash/aliases.sh;
 source ~/dotfiles/bash/functions.sh;
