@@ -38,7 +38,7 @@
 	# Undo a `git push`
 	undopush = push -f origin HEAD^:master
 
-	#lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 
 [apply]
 	# Detect whitespace errors when applying a patch
