@@ -21,6 +21,11 @@ function json() {
 	fi
 }
 
+# Echo the current date in mysql date format
+function now() {
+	date -u "+%Y-%m-%d %H:%M:%S"
+}
+
 #create a directory and go right into it
 function mcd() {
   mkdir -p "$1" && cd "$1";
@@ -46,5 +51,11 @@ fitterm() {
 # https://twitter.com/climagic/status/301023842300731394
 datestamp() {
 	date +%Y%m%d;
+}
+
+# horizontal rule for you CLI :-)
+# https://twitter.com/climagic/status/433397460623708160
+hr() {
+	yes -- ${@:-=} | tr -d $'\n' | head -c $COLUMNS ;
 }
 
