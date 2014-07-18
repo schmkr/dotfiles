@@ -5,6 +5,9 @@ export PATH=~/bin:/usr/local/bin:/usr/local/sbin:~/node_modules/.bin:$PATH
 export HISTSIZE=1000000
 export HISTFILESIZE=$HISTSIZE
 
+# Add a timestamp to the history, so we now what date time the commands were made..
+export HISTTIMEFORMAT="%F %T "
+
 #ignore duplicates and commands that start with a space.
 #NOTE TO SELF, remember to use the space start more often
 export HISTCONTROL=ignoreboth
