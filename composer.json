@@ -1,9 +1,13 @@
 {
     "require": {
-        "phpunit/phpunit": "~3.7",
-        "squizlabs/php_codesniffer": "~1.5",
-        "phpmd/phpmd": "~1.4",
         "d11wtq/boris": "~1.0",
-        "wp-cli/wp-cli": "v0.13.0"
-    }
+        "facebook/xhprof": "dev-master",
+		"phpmd/phpmd": ">=2.0.0-beta.7",
+        "phpunit/phpunit": "~4.0",
+        "sculpin/sculpin": "2.0.*@dev",
+        "squizlabs/php_codesniffer": "~1.5",
+        "wp-cli/wp-cli": "~0.16.0"
+    },
+   "minimum-stability" : "dev",
+   "prefer-stable": true
 }
