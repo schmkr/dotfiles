@@ -1,5 +1,5 @@
 # always add the bin dir in $HOME, for overriding some binaries with newer versions
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin/:/opt/local/bin:/opt/local/sbin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:/opt/local/bin:/opt/local/sbin:$PATH
 
 # Larger bash history
 export HISTSIZE=1000000

@@ -26,16 +26,6 @@ function mcd() {
   mkdir -p "$1" && cd "$1";
 }
 
-# search for occurrences of text in files
-# (but exclude .svn directory)
-ft() {
-	if [ -z "$2" ]; then
-		find . -type f -wholename "*.*" -not -iwholename "*.svn*" -print0 | xargs -0 fgrep -i "$1"
-	else # apply the filter
-		find . -type f -wholename "$2" -not -iwholename "*.svn*" -print0 | xargs -0 fgrep i "$1"
-	fi
-}
-
 # Truncate oversized lines on input. Mostly for display use. Example: grep foo log | fitterm
 # source: https://twitter.com/climagic/status/299554737756438528
 fitterm() {
