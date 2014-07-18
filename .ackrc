@@ -1,4 +1,4 @@
-#https://github.com/paulirish/dotfiles/blob/master/.ackrc
+# https://github.com/paulirish/dotfiles/blob/master/.ackrc
 --ignore-dir=log
 --ignore-dir=tmp
 --ignore-dir=.git
@@ -7,7 +7,7 @@
 --sort-files
 
 #search all files:
--a
+# -a
 
 #use less as a pager
 #--pager=less -r
