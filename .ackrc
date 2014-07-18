@@ -7,11 +7,7 @@
 --sort-files
 
 #search all files:
-<<<<<<< HEAD
 # -a
-=======
-#-a
->>>>>>> FETCH_HEAD
 
 #use less as a pager
 #--pager=less -r
