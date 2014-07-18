@@ -1,5 +1,5 @@
 # always add the bin dir in ~, for overriding some binaries with newer versions
-export PATH=~/bin:/usr/local/bin:/usr/local/sbin:~/node_modules/.bin:$PATH
+export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:$PATH
 
 # Larger bash history
 export HISTSIZE=1000000
