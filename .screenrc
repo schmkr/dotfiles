@@ -10,4 +10,4 @@ autodetach on
 startup_message off
 
 # Enable log on all windows.
-deflog on
+# deflog on
