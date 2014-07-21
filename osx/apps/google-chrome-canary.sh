@@ -4,7 +4,7 @@ open GoogleChromeCanary.dmg
 
 sleep 10s;
 
-cp -r /Volumes/Google\ Chrome\ Canary/Google\ Chrome\ Canary.app /tmp/;
+cp -r /Volumes/Google\ Chrome\ Canary/Google\ Chrome\ Canary.app /Applications/;
 
 umount /Volumes/Google\ Chrome\ Canary;
 

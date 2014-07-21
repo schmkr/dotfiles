@@ -5,3 +5,4 @@ open DropboxInstaller.dmg;
 sleep 3s;
 
 open /Volumes/Dropbox\ Installer/Dropbox.app;
+
