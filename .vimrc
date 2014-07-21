@@ -18,6 +18,7 @@ set incsearch
 
 " Show matching brackets when text indicator is over them
 set showmatch
+
 " How many tenths of a second to blink when matching brackets
 set mat=4
 
@@ -28,6 +29,7 @@ syntax enable
 " NOTE TO SELF: set "report terminal type" option in iTerm2 to "xterm-new"
 set background=dark
 colorscheme solarized
+hi Normal ctermbg=NONE
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
