@@ -1,5 +1,14 @@
 
-# Installation
+# schmkr's dotfiles
+This repo contains my dotfiles, a collection of configutation files for various commandline programs, such as git, vim, ack, bash.
+
+## installing
+	git clone https://github.com/schmkr/dotfiles.git dotfiles
+	cd $_
+	sh install.sh
+	
+Running `sh install.sh` will symlink all available dotfiles in your $HOME.
+
 
 ## Global Composer packages
 - intall Composer systemwide (TODO, add instructions for that)
