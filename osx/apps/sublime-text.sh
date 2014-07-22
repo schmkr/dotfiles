@@ -1,11 +1,10 @@
-http --download http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%20Build%203059.dmg
+DOWNLOAD_URL="http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%20Build%203059.dmg";
+DOWNLOADED_FILE="Sublime*.dmg";
 
-open Sublime*.dmg;
-
-sleep 5s;
+http --download ${DOWNLOAD_URL};
+INSTALL_DISK=$(hdiutil attach ${DOWNLOADED_FILE} | tail -n1 | head -n1);
 
 cp -r /Volumes/Sublime\ Text/Sublime\ Text.app /Applications/;
 
-umount /Volumes/Sublime\ Text/Sublime;
-
-rm Sublime*.dmg;
+hdiutil detach ${INSTALL_DISK:0:15};
+rm ${DOWNLOADED_FILE};
