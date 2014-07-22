@@ -1,9 +1,11 @@
-http --download https://sequel-pro.googlecode.com/files/sequel-pro-1.0.2.dmg;
+DOWNLOAD_URL="https://sequel-pro.googlecode.com/files/sequel-pro-1.0.2.dmg";
+DOWNLOADED_FILE="sequel-pro*.dmg";
 
-hdiutil attach sequel-pro*.dmg;
+http --download ${DOWNLOAD_URL};
+INSTALL_DISK=$(hdiutil attach ${DOWNLOADED_FILE} | tail -n1 | head -n1);
 
-mkdir ./sequel-test;
-sudo cp -r /Volumes/Sequel\ Pro*/Sequel\ Pro.app ./sequel-test/;
+# we need sudo for copying, because of some .svn files in the app :(
+sudo cp -r /Volumes/Sequel\ Pro*/Sequel\ Pro.app /Applications/;
 
-umount /Volumes/Sequel\ Pro */;
-rm sequel-pro*.dmg;
+hdiutil detach ${INSTALL_DISK:0:15};
+rm ${DOWNLOADED_FILE};
