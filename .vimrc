@@ -22,6 +22,7 @@ set showmatch
 " How many tenths of a second to blink when matching brackets
 set mat=4
 
+
 " Enable syntax highlighting
 syntax enable
 
@@ -41,6 +42,9 @@ set ffs=unix,dos,mac
 set nobackup
 set nowb
 set noswapfile
+
+" Configuration for lightline plugin
+set laststatus=2
 
 " open a NERDTree automatically when vim starts up if no files were specified
 " autocmd vimenter * if !argc() | NERDTree | endif
