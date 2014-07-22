@@ -4,3 +4,6 @@
 [submodule "vim/bundle/lightline.vim"]
 	path = vim/bundle/lightline.vim
 	url = git@github.com:itchyny/lightline.vim.git
+[submodule "_color-themes/dracula"]
+	path = _color-themes/dracula
+	url = git@github.com:zenorocha/dracula-theme.git
