@@ -22,14 +22,13 @@ set showmatch
 " How many tenths of a second to blink when matching brackets
 set mat=4
 
-
 " Enable syntax highlighting
 syntax enable
 
 " Set our colorscheme
 " NOTE TO SELF: set "report terminal type" option in iTerm2 to "xterm-new"
-set background=dark
-colorscheme solarized
+" set background=dark
+colorscheme dracula
 hi Normal ctermbg=NONE
 
 " Set utf8 as standard encoding and en_US as the standard language
