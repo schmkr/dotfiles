@@ -3,7 +3,6 @@ DOWNLOADED_FILE="VirtualBox-*.dmg";
 MOUNT_POINT="virtualbox";
 http --download ${DOWNLOAD_URL};
 
-#hdiutil attach ${DOWNLOADED_FILE};
 INSTALL_DISK=$(hdiutil attach ${DOWNLOADED_FILE} | tail -n1 | head -n1);
 echo "Mounted dmg to ${INSTALL_DISK:0:12}"
 
