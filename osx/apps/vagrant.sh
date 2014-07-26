@@ -3,9 +3,9 @@ DOWNLOADED_FILE="vagrant_*.dmg";
 
 http --download ${DOWNLOAD_URL};
 
-INSTALL_DISK=$(hdiutil attach ${DOWNLOADED_FILE} | tail -n1 | head -n1);
+INSTALL_DISK=$(hdiutil attach -noautoopen -noidme -nobrowse -mountpoint ./here ${DOWNLOADED_FILE} | tail -n1 | head -n1);
 
-open -W /Volumes/Vagrant/Vagrant.pkg;
+open -W ./here/Vagrant.pkg;
 
 hdiutil detach ${INSTALL_DISK:0:15};
 rm ${DOWNLOADED_FILE};
