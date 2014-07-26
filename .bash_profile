@@ -27,7 +27,7 @@ export LC_CTYPE="en_US.UTF-8"
 export LANG="en_US"
 
 # Case-insensitive globbing (used in pathname expansion)
-shopt -s nocaseglob
+# shopt -s nocaseglob
 
 # Append to the Bash history file, rather than overwriting it
 shopt -s histappend
@@ -46,7 +46,7 @@ source ~/dotfiles/bash/prompt.sh;
 
 # Load extra files from ~/.config/bash/ if they exist
 # These are kept outside of this repo for privacy issues
-for file in ~/.config/bash/{exports,aliases,functions}.sh; do
+for file in ~/.config/bash/{exports,aliases,functions,prompt}.sh; do
 	[ -r "$file" ] && source "$file"
 done
 unset file
