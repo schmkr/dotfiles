@@ -7,3 +7,6 @@
 [submodule "_color-themes/dracula"]
 	path = _color-themes/dracula
 	url = git@github.com:zenorocha/dracula-theme.git
+[submodule "vim/bundle/editorconfig.vim"]
+	path = vim/bundle/editorconfig.vim
+	url = git@github.com:editorconfig/editorconfig-vim.git
