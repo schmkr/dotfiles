@@ -90,4 +90,4 @@
 	remote = origin
 	merge = refs/heads/master
 [push]
-	default = matching
+	default = current
