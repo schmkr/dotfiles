@@ -56,6 +56,9 @@ defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
+# Do not show icons on the desktop
+defaults write com.apple.finder CreateDesktop -boolean false
+
 # Save screenshots to the desktop
 defaults write com.apple.screencapture location -string "$HOME/Desktop"
 
