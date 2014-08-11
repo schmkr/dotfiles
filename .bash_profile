@@ -50,3 +50,8 @@ for file in ~/.config/bash/{exports,aliases,functions,prompt}.sh; do
 	[ -r "$file" ] && source "$file"
 done
 unset file
+
+# Display this nice Apple logo with system stats, if archey is
+if [ "$(which archey)" ]; then
+  archey --color
+fi
