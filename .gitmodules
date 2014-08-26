@@ -10,3 +10,6 @@
 [submodule "vim/bundle/editorconfig.vim"]
 	path = vim/bundle/editorconfig.vim
 	url = git@github.com:editorconfig/editorconfig-vim.git
+[submodule "vim/bundle/goyo.vim"]
+	path = vim/bundle/goyo.vim
+	url = git@github.com:junegunn/goyo.vim.git
