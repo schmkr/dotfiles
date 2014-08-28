@@ -21,3 +21,6 @@ atlassian-ide-plugin.xml
 .nbproject
 *.sublime-project
 *.sublime-workspace
+
+# sass cache directory
+.sass-cache
