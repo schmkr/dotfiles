@@ -26,6 +26,9 @@ export LC_ALL="en_US.UTF-8"
 export LC_CTYPE="en_US.UTF-8"
 export LANG="en_US"
 
+# Set PHPRC to include the php.ini file from this dotfiles directory (symlink it in your homedir)
+export PHPRC=$HOME/php.ini
+
 # Case-insensitive globbing (used in pathname expansion)
 # shopt -s nocaseglob
 
