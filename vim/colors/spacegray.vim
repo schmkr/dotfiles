@@ -1,0 +1,1 @@
+../../_color-themes/spacegray/colors/spacegray.vim

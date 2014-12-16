@@ -13,3 +13,6 @@
 [submodule "vim/bundle/goyo.vim"]
 	path = vim/bundle/goyo.vim
 	url = git@github.com:junegunn/goyo.vim.git
+[submodule "_color-themes/spacegray"]
+	path = _color-themes/spacegray
+	url = git@github.com:ajh17/Spacegray.vim.git
