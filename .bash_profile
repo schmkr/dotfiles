@@ -44,6 +44,7 @@ fi
 
 source ~/dotfiles/bash/aliases.sh;
 source ~/dotfiles/bash/functions.sh;
+source ~/dotfiles/bash/colors.sh;
 source ~/dotfiles/bash/prompt.sh;
 #source ~/dotfiles/git/bash.sh;
 
