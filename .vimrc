@@ -28,8 +28,9 @@ syntax enable
 " Set our colorscheme
 " NOTE TO SELF: set "report terminal type" option in iTerm2 to "xterm-new"
 " set background=dark
-colorscheme dracula
-hi Normal ctermbg=NONE
+" colorscheme dracula
+colorscheme spacegray
+" hi Normal ctermbg=NONE
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
