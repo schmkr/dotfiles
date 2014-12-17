@@ -8,20 +8,13 @@ elif infocmp xterm-256color >/dev/null 2>&1; then
 	export TERM=xterm-256color
 fi
 
-function print_before_the_prompt () {
-	NOW=`date '+%d/%m %T'`
-	printf "${txtblu}%s: " "$NOW"
-}
-
 function parse_git_dirty() {
 	[[ $(git status 2> /dev/null | tail -n1 | cut -b 1-17) != "nothing to commit" ]] && echo "*"
 }
-
 function parse_git_branch() {
 	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
 }
 
-PROMPT_COMMAND=print_before_the_prompt
-# export PS1=" \[${BOLD}${MAGENTA}\]\u \[${WHITE}\]@ \[$ORANGE\]\h \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
-export PS1="${txtylw}\u ${txtwht}@ ${txtgrn}\h ${txtwht}in ${txtred}\w ${txtwht}\$([[ -n \$(git branch 2> /dev/null) ]] && echo \"on \")${bldpur}\$(parse_git_branch)${txtwht}\n\$ ${txtrst}"
-export PS2="${bldylw}→ ${txtrst}"
+#default prompt
+export PS1="${txtblk}`date '+%d.%m %T'` ${bldblu}\w ${bldgrn}\$([[ -n \$(git branch 2> /dev/null) ]] && printf \"on %s \" \$(parse_git_branch))${bldylw}\$${txtrst} "
+# export PS2="${bldylw}→ ${txtrst}"
