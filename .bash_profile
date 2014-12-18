@@ -35,6 +35,11 @@ export PHPRC=$HOME/php.ini
 # Append to the Bash history file, rather than overwriting it
 shopt -s histappend
 
+source ~/dotfiles/bash/aliases.sh;
+source ~/dotfiles/bash/functions.sh;
+#source ~/dotfiles/bash/colors.sh;
+source ~/dotfiles/bash/prompt.sh;
+
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "~/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
 
@@ -42,14 +47,9 @@ if [[ -x "$(which brew)" && -f $(brew --prefix)/etc/bash_completion ]]; then
   . $(brew --prefix)/etc/bash_completion
 fi
 
-source ~/dotfiles/bash/aliases.sh;
-source ~/dotfiles/bash/functions.sh;
-source ~/dotfiles/bash/colors.sh;
-source ~/dotfiles/bash/prompt.sh;
-
 # Load extra files from ~/.config/bash/ if they exist
 # These are kept outside of this repo for privacy issues
-for file in ~/.config/bash/{exports,aliases,functions,prompt}.sh; do
+for file in ~/.config/bash/*.sh; do
 	[ -r "$file" ] && source "$file"
 done
 unset file
