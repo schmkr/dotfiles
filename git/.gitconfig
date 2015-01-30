@@ -3,8 +3,10 @@
 # and GIT_COMMITTER_NAME and GIT_COMMITTER_EMAIL
 
 [alias]
-	# View the SHA, description, and history graph of the latest 20 commits
-	l = log --pretty=oneline -n 20 --graph
+	# View the SHA, description, and history graph of the latest 100 commits
+	l = log --pretty=oneline --graph -n 100
+
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 
 	# View the current working tree status using the short format
 	s = status -s
@@ -25,7 +27,7 @@
 	ca = !git add -A && git commit -av
 
 	# SVN bad habits die hard
-	ci = git commit
+	# ci = git commit
 
 	# Switch to a branch, creating it if necessary
 	go = checkout -B
@@ -41,7 +43,8 @@
 	# Undo a `git push`
 	undopush = push -f origin HEAD^:master
 
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+	# Stash, pull --rebase, Unstash
+	sup = !git stash && git pull --rebase && git pop
 
 [apply]
 	# Detect whitespace errors when applying a patch
