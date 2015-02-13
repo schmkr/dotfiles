@@ -1,5 +1,5 @@
 # always add the bin dir in ~, for overriding some binaries with newer versions
-export PATH=~/bin:~/.composer/vendor/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:$PATH
+export PATH=./bin:~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:$PATH
 
 # Larger bash history
 export HISTSIZE=1000000
