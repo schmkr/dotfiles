@@ -1,13 +1,12 @@
 {
-    "require": {
-        "d11wtq/boris": "~1.0",
-        "facebook/xhprof": "dev-master",
-		"phpmd/phpmd": ">=2.0.0-beta.7",
-        "phpunit/phpunit": "~4.0",
-        "sculpin/sculpin": "2.0.*@dev",
-        "squizlabs/php_codesniffer": "~1.5",
-        "wp-cli/wp-cli": "~0.16.0"
-    },
-   "minimum-stability" : "dev",
-   "prefer-stable": true
+	"require": {
+		"d11wtq/boris": "v1.0.8",
+		"phpmd/phpmd": "~2.2.0",
+		"phpunit/phpunit": "~4.4",
+		"psy/psysh": "v0.3.3",
+		"squizlabs/php_codesniffer": "~2.2.0",
+		"wp-cli/wp-cli": "~0.18.0"
+	},
+	"minimum-stability" : "dev",
+	"prefer-stable": true
 }
