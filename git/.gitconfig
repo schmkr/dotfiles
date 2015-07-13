@@ -44,11 +44,14 @@
 	undopush = push -f origin HEAD^:master
 
 	# Stash, pull --rebase, Unstash
-	sup = !git stash && git pull --rebase && git pop
+	sup = !git stash save && git pull --rebase && git stash pop
+
+	# alias for pull --rebase, like `svn up`
+	up = !git pull --rebase
 
 [apply]
 	# Detect whitespace errors when applying a patch
-	whitespace = fix
+	# whitespace = fix
 
 [core]
 	editor = vim
@@ -57,7 +60,7 @@
 	attributesfile = ~/dotfiles/git/.gitattributes
 
 	# Treat spaces before tabs, lines that are indented with 8 or more spaces, and all kinds of trailing whitespace as an error
-	whitespace = space-before-tab,indent-with-non-tab,trailing-space
+	# whitespace = space-before-tab,indent-with-non-tab,trailing-space
 
 	quotepath = false
 
