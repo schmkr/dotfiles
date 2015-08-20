@@ -96,3 +96,10 @@
 	default = current
 [rerere]
 	enabled = true
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[user]
+	name = Alwin Schoemaker
+	email = git@schmkr.nl

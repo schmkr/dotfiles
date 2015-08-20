@@ -6,7 +6,7 @@ export ZSH=/Users/alwin/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="robbyrussell"
-ZSH_THEME="candy"
+ZSH_THEME="dst"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -50,7 +50,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(brew encode64 forklift git gitignore grunt history history-substring-search httpie npm osx rsync screen ssh-agent sublime sudo themes vagrant)
+plugins=(brew encode64 forklift git gitignore grunt history history-substring-search httpie npm osx rsync screen sublime sudo themes vagrant)
 
 # User configuration
 
