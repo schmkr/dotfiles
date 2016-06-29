@@ -26,9 +26,6 @@
 	# Commit all changes
 	ca = !git add -A && git commit -av
 
-	# SVN bad habits die hard
-	# ci = git commit
-
 	# Switch to a branch, creating it if necessary
 	go = checkout -B
 
@@ -56,8 +53,8 @@
 [core]
 	editor = vim
 
-	excludesfile = ~/dotfiles/git/.gitignore
-	attributesfile = ~/dotfiles/git/.gitattributes
+	excludesfile = ~/.gitignore
+	attributesfile = ~/.gitattributes
 
 	# Treat spaces before tabs, lines that are indented with 8 or more spaces, and all kinds of trailing whitespace as an error
 	# whitespace = space-before-tab,indent-with-non-tab,trailing-space
@@ -67,15 +64,18 @@
 [color]
 	# Use colors in Git commands that are capable of colored output when outputting to the terminal
 	ui = auto
+
 [color "branch"]
 	current = yellow reverse
 	local = yellow
 	remote = green
+
 [color "diff"]
 	meta = yellow bold
 	frag = magenta bold
 	old = red bold
 	new = green bold
+
 [color "status"]
 	added = yellow
 	changed = green
@@ -88,15 +88,32 @@
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
 
+[branch]
+	autosetuprebase = always
+	autosetupmerge = always
+
 # Use `origin` as the default remote on the `master` branch in all cases
 [branch "master"]
 	remote = origin
 	merge = refs/heads/master
+
 [push]
 	default = current
+
 [rerere]
 	enabled = true
+
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
+
+[pager]
+	diff = diff-so-fancy | less --tabs=1,5 -RFX
+	show = diff-so-fancy | less --tabs=1,5 -RFX
+
+[pull]
+	ff = only
+
+[user]
+	useconfigonly = true
