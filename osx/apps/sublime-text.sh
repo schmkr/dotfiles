@@ -1,4 +1,4 @@
-DOWNLOAD_URL="http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%20Build%203059.dmg";
+DOWNLOAD_URL="https://download.sublimetext.com/Sublime%20Text%20Build%203114.dmg";
 DOWNLOADED_FILE="Sublime*.dmg";
 
 http --download ${DOWNLOAD_URL};
