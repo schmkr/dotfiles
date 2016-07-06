@@ -16,7 +16,7 @@ ZSH_CUSTOM=$HOME/.config/oh-my-zsh
 # - philips
 # - tjkirch
 # - tonotdo
-ZSH_THEME="dst"
+ZSH_THEME="crcandy"
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
