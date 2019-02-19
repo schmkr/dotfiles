@@ -1,4 +1,4 @@
-DOWNLOAD_URL="http://download.virtualbox.org/virtualbox/4.3.14/VirtualBox-4.3.14-95030-OSX.dmg";
+DOWNLOAD_URL="http://download.virtualbox.org/virtualbox/5.1.10/VirtualBox-5.1.10-112026-OSX.dmg";
 DOWNLOADED_FILE="VirtualBox-*.dmg";
 MOUNT_POINT="virtualbox";
 http --download ${DOWNLOAD_URL};
