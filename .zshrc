@@ -8,15 +8,7 @@ ZSH_CUSTOM=$HOME/.config/oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-# Possible likes:
-# - af-magic
-# - bureau
-# - crcandy
-# - dst
-# - philips
-# - tjkirch
-# - tonotdo
-ZSH_THEME="crcandy"
+ZSH_THEME="geoffgarside"
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
@@ -46,7 +38,7 @@ COMPLETION_WAITING_DOTS="true"
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-#DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -60,10 +52,45 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(brew emoji git gitignore grunt history history-substring-search httpie k npm osx ssh-agennt sudo)
+plugins=(
+	ansible
+	aws
+	brew
+	colored-man-pages
+	cp
+	docker
+	docker-compose
+	emoji
+	encode64
+	extract
+	forklift
+	git
+	git-extras
+	go
+	httpie
+	history
+	history-substring-search
+	iterm2
+	k
+	#keychain
+	kubectl
+	ng
+	node
+	npm
+	osx
+	rsync
+	sbt
+	scala
+	screen
+	ssh-agennt
+	sudo
+	terraform
+	tig
+	vscode
+	yarn
+)
 
 # User configuration
-
 export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -78,8 +105,11 @@ export LC_CTYPE="en_US.UTF-8"
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='subl -w'
+  export EDITOR='code -w'
 fi
+
+# Tell `less` to don't page if there is only one page
+LESS='-F -X -r'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -97,4 +127,17 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias atom='open -a Atom'
+alias fl='open -a ForkLift'
 
+# Load extra files from ~/.config/bash/ if they exist
+# These are kept outside of this repo for privacy issues
+for file in ~/.config/bash/*.sh; do
+	[ -r "$file" ] && source "$file"
+done
+unset file
+
+# Android shizzle
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=1
