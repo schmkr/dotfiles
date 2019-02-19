@@ -26,25 +26,37 @@
 	# Commit all changes
 	ca = !git add -A && git commit -av
 
-	# Switch to a branch, creating it if necessary
-	go = checkout -B
-
 	# Show verbose output about tags, branches or remotes
 	tags = tag -l
-	branches = branch -a
+	branches = branch -a -v
 	remotes = remote -v
-
-	# Credit an author on the latest commit
-	credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
 
 	# Undo a `git push`
 	undopush = push -f origin HEAD^:master
 
-	# Stash, pull --rebase, Unstash
-	sup = !git stash save && git pull --rebase && git stash pop
-
-	# alias for pull --rebase, like `svn up`
 	up = !git pull --rebase
+
+	please = push --force-with-lease
+	commend = commit --amend --no-edit
+
+	# from: https://gist.github.com/robmiller/6018582
+	# Delete any branches that have been merged into master
+	# See also: https://gist.github.com/robmiller/5133264
+	delete-merged-branches = "!git branch --merged origin/master | grep -v 'master$' | xargs git branch -d"
+
+	# Given a merge commit, find the span of commits that exist(ed) on that
+	# branch. Again, not so useful in itself, but used by other aliases.
+	merge-span = "!f() { echo $(git log -1 $2 --merges --pretty=format:%P | cut -d' ' -f1)$1$(git log -1 $2 --merges --pretty=format:%P | cut -d' ' -f2); }; f"
+
+	# Find the commits that were introduced by a merge
+	merge-log = "!git log `git merge-span .. $1`"
+	# Show the changes that were introduced by a merge
+	merge-diff = "!git diff `git merge-span ... $1`"
+	# As above, but in your difftool
+	merge-difftool = "!git difftool `git merge-span ... $1`"
+
+	# Interactively rebase all the commits on the current branch
+	rebase-branch = "!git rebase -i `git merge-base master HEAD`"
 
 [apply]
 	# Detect whitespace errors when applying a patch
@@ -63,7 +75,7 @@
 
 [color]
 	# Use colors in Git commands that are capable of colored output when outputting to the terminal
-	ui = auto
+	ui = true
 
 [color "branch"]
 	current = yellow reverse
@@ -71,10 +83,12 @@
 	remote = green
 
 [color "diff"]
-	meta = yellow bold
+	meta = yellow
 	frag = magenta bold
 	old = red bold
 	new = green bold
+	commit = yellow bold
+	whitespace = red reverse
 
 [color "status"]
 	added = yellow
@@ -117,3 +131,13 @@
 
 [user]
 	useconfigonly = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[advice]
+	ignoredHook = false
+[diff]
+	colorMoved = dimmed_zebra
