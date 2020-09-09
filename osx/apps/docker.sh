@@ -1,6 +1,8 @@
-APP_NAME="Google Chrome.app"
-DOWNLOADED_FILE="googlechrome.dmg";
-DOWNLOAD_URL="https://storage.googleapis.com/chrome-canary/GoogleChromeCanary.dmg";
+set -euo pipefail
+
+APP_NAME="Docker.app";
+DOWNLOAD_URL="https://download.docker.com/mac/edge/Docker.dmg";
+DOWNLOADED_FILE="Docker.dmg";
 
 echo "Downloading ${APP_NAME} from ${DOWNLOAD_URL}";
 curl --location --output ${DOWNLOADED_FILE} ${DOWNLOAD_URL};
@@ -11,8 +13,8 @@ INSTALL_DISK=$(hdiutil attach -noautoopen -noidme -nobrowse -mountpoint ./here $
 echo "Removing old installations"
 rm -rf /Applications/"${APP_NAME}"
 
-echo "Copying ${APP_NAME} to /Applications"
-cp -r ./here/"${APP_NAME}" /Applications;
+echo "Copying ${APP_NAME} to ~/Applications"
+cp -r ./here/"${APP_NAME}" ~/Applications;
 
 echo "Unmounting ${DOWNLOADED_FILE}"
 hdiutil detach ${INSTALL_DISK:0:12};

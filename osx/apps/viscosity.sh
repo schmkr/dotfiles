@@ -1,13 +1,25 @@
-DOWNLOAD_URL="https://www.sparklabs.com/downloads/Viscosity.dmg";
+set -euo pipefail
+
+APP_NAME="Viscosity.app"
 DOWNLOADED_FILE="Viscosity.dmg";
+DOWNLOAD_URL="https://www.sparklabs.com/downloads/Viscosity.dmg";
 
-http --download ${DOWNLOAD_URL} --output ${DOWNLOADED_FILE};
+echo "Downloading ${APP_NAME} from ${DOWNLOAD_URL}";
+curl --location --output ${DOWNLOADED_FILE} ${DOWNLOAD_URL};
+
+echo "Mounting ${DOWNLOADED_FILE}";
 INSTALL_DISK=$(hdiutil attach -noautoopen -noidme -nobrowse -mountpoint ./here ${DOWNLOADED_FILE} | tail -n1 | head -n1);
-echo "Mounted dmg to ${INSTALL_DISK:0:12}"
 
-cp -r ./here/Viscosity.app /Applications;
-echo "Copied Firefox.app to /Applications";
+echo "Removing old installations"
+rm -rf ~/Applications/"${APP_NAME}"
 
+echo "Copying ${APP_NAME} to ~/Applications"
+cp -r ./here/"${APP_NAME}" ~/Applications;
+
+echo "Unmounting ${DOWNLOADED_FILE}"
 hdiutil detach ${INSTALL_DISK:0:12};
+
+echo "Removing ${DOWNLOADED_FILE}"
 rm ${DOWNLOADED_FILE};
-echo "Done";
+
+echo "Done ✅";

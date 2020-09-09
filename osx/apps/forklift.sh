@@ -1,8 +1,8 @@
 set -euo pipefail
 
-APP_NAME="Cyberduck.app";
-DOWNLOAD_URL="https://update.cyberduck.io/Cyberduck-7.5.1.33324.zip";
-DOWNLOADED_FILE="Cyberduck.zip";
+APP_NAME="ForkLift.app";
+DOWNLOAD_URL="https://download.binarynights.com/ForkLift3.3.1.zip";
+DOWNLOADED_FILE="ForkLift.zip";
 
 echo "Downloading ${APP_NAME} from ${DOWNLOAD_URL}";
 curl --location --output ${DOWNLOADED_FILE} ${DOWNLOAD_URL};

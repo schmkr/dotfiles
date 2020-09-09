@@ -1,20 +1,23 @@
+set -euo pipefail
+
+APP_NAME="Install Spotify.app";
 DOWNLOAD_URL="http://download.spotify.com/SpotifyInstaller.zip";
 DOWNLOADED_FILE="SpotifyInstaller.zip";
-APP_NAME="Install Spotify.app";
-http --download ${DOWNLOAD_URL};
-tar -xf ${DOWNLOADED_FILE};
+
+echo "Downloading ${APP_NAME} from ${DOWNLOAD_URL}";
+curl --location --output ${DOWNLOADED_FILE} ${DOWNLOAD_URL};
+
+echo "Unpacking ${DOWNLOADED_FILE}";
+unzip -q ${DOWNLOADED_FILE};
+
+echo "Removing old installations"
+rm -rf /Applications/"${APP_NAME}"
 
 echo "Installing Spotify";
-open -W "${APP_NAME}";
+open -W "${APP_NAME}"; # -W tells the open command to wait until the opened app closes again
 
-#hdiutil attach ${DOWNLOADED_FILE};
-# INSTALL_DISK=$(hdiutil attach ${DOWNLOADED_FILE} | tail -n1 | head -n1);
-# echo "Mounted dmg to ${INSTALL_DISK:0:12}"
-
-# Open pkg file and tell open to wait
-# echo "Please run the wizard that will prompt shortly";
-# open -W /Volumes/VirtualBox/VirtualBox.pkg;
-
-# hdiutil detach ${INSTALL_DISK:0:12};
+echo "Removing ${DOWNLOADED_FILE} and ${APP_NAME}"
 rm ${DOWNLOADED_FILE};
 rm -rf "${APP_NAME}";
+
+echo "Done ✅";
