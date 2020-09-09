@@ -65,7 +65,7 @@
 [core]
 	editor = vim
 
-	excludesfile = /Users/alwin/.gitignore
+	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
 
 	# Treat spaces before tabs, lines that are indented with 8 or more spaces, and all kinds of trailing whitespace as an error
