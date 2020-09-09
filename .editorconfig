@@ -19,7 +19,7 @@ insert_final_newline = true
 [*.sh]
 indent_style = space
 
-[*.yml,*.yaml]
+[*.{yml,yaml}]
 indent_style = space
 indent_size = 2
 

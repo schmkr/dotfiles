@@ -65,7 +65,7 @@
 [core]
 	editor = vim
 
-	excludesfile = ~/.gitignore
+	excludesfile = /Users/alwin/.gitignore
 	attributesfile = ~/.gitattributes
 
 	# Treat spaces before tabs, lines that are indented with 8 or more spaces, and all kinds of trailing whitespace as an error
@@ -113,14 +113,16 @@
 
 [push]
 	default = current
+	followTags = false
 
 [rerere]
 	enabled = true
 
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
 	required = true
+	process = git-lfs filter-process
 
 [pager]
 	diff = diff-so-fancy | less --tabs=1,5 -RFX
@@ -131,13 +133,11 @@
 
 [user]
 	useconfigonly = true
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [advice]
 	ignoredHook = false
 [diff]
 	colorMoved = dimmed_zebra
+[protocol]
+	version = 2
+[gpg]
+	program = gpg
