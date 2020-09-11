@@ -8,7 +8,7 @@ echo "Downloading ${APP_NAME} from ${DOWNLOAD_URL}";
 curl --location --output ${DOWNLOADED_FILE} ${DOWNLOAD_URL};
 
 echo "Mounting ${DOWNLOADED_FILE}";
-INSTALL_DISK=$(hdiutil attach -noautoopen -noidme -nobrowse -mountpoint ./here ${DOWNLOADED_FILE} | tail -n1 | head -n1);
+INSTALL_DISK=$(hdiutil attach -noautoopen -nobrowse -mountpoint ./here ${DOWNLOADED_FILE} | tail -n1 | head -n1);
 
 echo "Removing old installations"
 rm -rf /Applications/"${APP_NAME}"
